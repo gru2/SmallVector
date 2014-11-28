@@ -1,0 +1,4 @@
+
+SmallVector is C++ template container class. It is simple and easy to
+understand and modify. If more comprehensive solution is needed look at
+LLVM SmallVector instead.
