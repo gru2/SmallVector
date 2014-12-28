@@ -137,7 +137,7 @@ public:
 			data[n + i] = x[i];
 	}
 	char *str() { return data; }
-	bool operator ==(const SmallString<N> &x)
+	bool operator ==(const SmallString<N> &x) const
 	{
 		if (size_ != x.size_)
 			return false;
@@ -146,7 +146,23 @@ public:
 				return false;
 		return true;
 	}
-	bool operator <(const SmallString<N> &x)
+	bool operator ==(const char *x) const
+	{
+		unsigned len= 0;
+		for (;;)
+		{
+			if (x[len] == 0)
+				break;
+			len++;
+		}
+		if (size_ != len)
+			return false;
+		for (unsigned i = 0; i < size_; i++)
+			if (data[i] != x[i])
+				return false;
+		return true;
+	}
+	bool operator <(const SmallString<N> &x) const
 	{
 		unsigned n = size_;
 		if (x.size_ < n)
@@ -155,6 +171,25 @@ public:
 			if (data[i] != x.data[i])
 				return data[i] < x.data[i];
 		if (n < x.size_)
+			return true;
+		return false;
+	}
+	bool operator <(const char *x) const
+	{
+		unsigned len= 0;
+		for (;;)
+		{
+			if (x[len] == 0)
+				break;
+			len++;
+		}
+		unsigned n = size_;
+		if (len < n)
+			n = len;
+		for (unsigned i = 0; i < n; i++)
+			if (data[i] != x[i])
+				return data[i] < x[i];
+		if (n < len)
 			return true;
 		return false;
 	}
