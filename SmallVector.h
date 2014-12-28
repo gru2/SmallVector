@@ -72,7 +72,7 @@ public:
 		resize(size_ + 1);
 		data[size_ - 1] = x;
 	}
-	int &operator [](unsigned i)
+	T &operator [](unsigned i)
 	{
 		return data[i];
 	}

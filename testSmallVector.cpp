@@ -43,5 +43,13 @@ int main()
 	check(v2[0] == 4);
 	check(v2[1] == 5);
 	check(v2[2] == 6);
+
+	SmallVector<double, 4> vd(2);
+	vd[0] = 1.5;
+	vd[1] = 2.5;
+	check(vd.size() == 2);
+	check(vd[0] == 1.5);
+	check(vd[1] == 2.5);
+
 	return 0;
 }
