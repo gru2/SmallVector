@@ -1,5 +1,5 @@
-#ifndef __SMALL_VECTOR_H
-#define __SMALL_VECTOR_H
+#ifndef __SMALL_STRING_H
+#define __SMALL_STRING_H
 
 template<unsigned N>
 class SmallString
