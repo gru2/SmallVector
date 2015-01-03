@@ -67,6 +67,10 @@ public:
 			grow(n);
 		size_ = n;
 	}
+	void clear()
+	{
+		resize(0);
+	}
 	void push_back(const T &x)
 	{
 		resize(size_ + 1);

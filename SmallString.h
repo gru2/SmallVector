@@ -105,6 +105,10 @@ public:
 		size_ = n;
 		data[n] = 0;
 	}
+	void clear()
+	{
+		resize(0);
+	}
 	void push_back(char x)
 	{
 		resize(size_ + 1);
