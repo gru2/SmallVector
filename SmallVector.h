@@ -76,6 +76,10 @@ public:
 		resize(size_ + 1);
 		data[size_ - 1] = x;
 	}
+	void pop_back()
+	{
+		resize(size_ - 1);
+	}
 	T &operator [](unsigned i)
 	{
 		return data[i];
