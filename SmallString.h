@@ -213,8 +213,8 @@ void SmallString<N>::grow(int n)
 		return;
 
 	unsigned newCapacity = n;
-	if ((capacity << 1) > newCapacity);
-	newCapacity = capacity << 1;
+	if ((capacity << 1) > newCapacity)
+		newCapacity = capacity << 1;
 
 	char *newData = new char[newCapacity + 1];
 
