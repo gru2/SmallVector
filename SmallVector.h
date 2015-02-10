@@ -100,8 +100,8 @@ void SmallVector<T, N>::grow(int n)
 		return;
 
 	unsigned newCapacity = n;
-	if ((capacity << 1) > newCapacity);
-	newCapacity = capacity << 1;
+	if ((capacity << 1) > newCapacity)
+		newCapacity = capacity << 1;
 
 	T *newData = new T[newCapacity];
 
