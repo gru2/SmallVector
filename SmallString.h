@@ -199,7 +199,7 @@ public:
 	}
 
 protected:
-	void grow(int n);
+	void grow(unsigned n);
 	unsigned size_;
 	unsigned capacity;
 	char *data;
@@ -207,7 +207,7 @@ protected:
 };
 
 template<unsigned N>
-void SmallString<N>::grow(int n)
+void SmallString<N>::grow(unsigned n)
 {
 	if (n < capacity)
 		return;
