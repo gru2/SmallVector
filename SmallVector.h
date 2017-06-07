@@ -85,6 +85,10 @@ public:
 	{
 		return data[i];
 	}
+	const T &operator [](unsigned i) const
+	{
+		return data[i];
+	}
 
 protected:
 	void grow(unsigned n);
@@ -106,7 +110,7 @@ void SmallVector<T, N>::grow(unsigned n)
 
 	T *newData = new T[newCapacity];
 
-	for (unsigned i=0; i < size_; i++)
+	for (unsigned i = 0; i < size_; i++)
 		newData[i] = data[i];
 
 	if (capacity > N)
